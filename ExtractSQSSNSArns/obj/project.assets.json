@@ -1,0 +1,216 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "AWSSDK.Core/4.0.0.11": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/AWSSDK.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "AWSSDK.SimpleNotificationService/4.0.0.9": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[4.0.0.11, 5.0.0)"
+        },
+        "compile": {
+          "lib/net8.0/AWSSDK.SimpleNotificationService.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.SimpleNotificationService.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "AWSSDK.SQS/4.0.0.10": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[4.0.0.11, 5.0.0)"
+        },
+        "compile": {
+          "lib/net8.0/AWSSDK.SQS.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.SQS.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AWSSDK.Core/4.0.0.11": {
+      "sha512": "y7J/hTTtCaOFtcuHKmcNyiB6SUpOU7hH9N0HLa6ajvZoF0QdCOmOlY3r3pbddVWpZoFttOBng064HEvKOX7rtw==",
+      "type": "package",
+      "path": "awssdk.core/4.0.0.11",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "awssdk.core.4.0.0.11.nupkg.sha512",
+        "awssdk.core.nuspec",
+        "images/AWSLogo.png",
+        "lib/net472/AWSSDK.Core.dll",
+        "lib/net472/AWSSDK.Core.pdb",
+        "lib/net472/AWSSDK.Core.xml",
+        "lib/net8.0/AWSSDK.Core.dll",
+        "lib/net8.0/AWSSDK.Core.pdb",
+        "lib/net8.0/AWSSDK.Core.xml",
+        "lib/netcoreapp3.1/AWSSDK.Core.dll",
+        "lib/netcoreapp3.1/AWSSDK.Core.pdb",
+        "lib/netcoreapp3.1/AWSSDK.Core.xml",
+        "lib/netstandard2.0/AWSSDK.Core.dll",
+        "lib/netstandard2.0/AWSSDK.Core.pdb",
+        "lib/netstandard2.0/AWSSDK.Core.xml",
+        "tools/account-management.ps1"
+      ]
+    },
+    "AWSSDK.SimpleNotificationService/4.0.0.9": {
+      "sha512": "BvfJ88mcP+6tgWwksTYNzBdPHMw3Igw9eaT3lU2NdzmONmaW93I+W4BBa9Y/PIBLZHCQQJBk1Hq1m/eBA3W8ag==",
+      "type": "package",
+      "path": "awssdk.simplenotificationservice/4.0.0.9",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/AWSSDK.SimpleNotificationService.CodeAnalysis.dll",
+        "analyzers/dotnet/cs/SharedAnalysisCode.dll",
+        "awssdk.simplenotificationservice.4.0.0.9.nupkg.sha512",
+        "awssdk.simplenotificationservice.nuspec",
+        "images/AWSLogo.png",
+        "lib/net472/AWSSDK.SimpleNotificationService.dll",
+        "lib/net472/AWSSDK.SimpleNotificationService.pdb",
+        "lib/net472/AWSSDK.SimpleNotificationService.xml",
+        "lib/net8.0/AWSSDK.SimpleNotificationService.dll",
+        "lib/net8.0/AWSSDK.SimpleNotificationService.pdb",
+        "lib/net8.0/AWSSDK.SimpleNotificationService.xml",
+        "lib/netcoreapp3.1/AWSSDK.SimpleNotificationService.dll",
+        "lib/netcoreapp3.1/AWSSDK.SimpleNotificationService.pdb",
+        "lib/netcoreapp3.1/AWSSDK.SimpleNotificationService.xml",
+        "lib/netstandard2.0/AWSSDK.SimpleNotificationService.dll",
+        "lib/netstandard2.0/AWSSDK.SimpleNotificationService.pdb",
+        "lib/netstandard2.0/AWSSDK.SimpleNotificationService.xml",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "AWSSDK.SQS/4.0.0.10": {
+      "sha512": "feA6nboAihgzXgKWdKuv9U1PXz8LLJV+IeVqctljYCTZjfv9hp6Aa8/TjyyhOFGJG9wLdlUxPKkokBR3qr2Ufg==",
+      "type": "package",
+      "path": "awssdk.sqs/4.0.0.10",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/AWSSDK.SQS.CodeAnalysis.dll",
+        "analyzers/dotnet/cs/SharedAnalysisCode.dll",
+        "awssdk.sqs.4.0.0.10.nupkg.sha512",
+        "awssdk.sqs.nuspec",
+        "images/AWSLogo.png",
+        "lib/net472/AWSSDK.SQS.dll",
+        "lib/net472/AWSSDK.SQS.pdb",
+        "lib/net472/AWSSDK.SQS.xml",
+        "lib/net8.0/AWSSDK.SQS.dll",
+        "lib/net8.0/AWSSDK.SQS.pdb",
+        "lib/net8.0/AWSSDK.SQS.xml",
+        "lib/netcoreapp3.1/AWSSDK.SQS.dll",
+        "lib/netcoreapp3.1/AWSSDK.SQS.pdb",
+        "lib/netcoreapp3.1/AWSSDK.SQS.xml",
+        "lib/netstandard2.0/AWSSDK.SQS.dll",
+        "lib/netstandard2.0/AWSSDK.SQS.pdb",
+        "lib/netstandard2.0/AWSSDK.SQS.xml",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "AWSSDK.SQS >= 4.0.0.10",
+      "AWSSDK.SimpleNotificationService >= 4.0.0.9"
+    ]
+  },
+  "packageFolders": {
+    "/Users/kristiyan.borisov/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/kristiyan.borisov/Desktop/SearchForSNSFromSQSArns/ExtractSQSSNSArns/ExtractSQSSNSArns.csproj",
+      "projectName": "ExtractSQSSNSArns",
+      "projectPath": "/Users/kristiyan.borisov/Desktop/SearchForSNSFromSQSArns/ExtractSQSSNSArns/ExtractSQSSNSArns.csproj",
+      "packagesPath": "/Users/kristiyan.borisov/.nuget/packages/",
+      "outputPath": "/Users/kristiyan.borisov/Desktop/SearchForSNSFromSQSArns/ExtractSQSSNSArns/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/kristiyan.borisov/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "/usr/local/share/dotnet/library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      }
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "dependencies": {
+          "AWSSDK.SQS": {
+            "target": "Package",
+            "version": "[4.0.0.10, )"
+          },
+          "AWSSDK.SimpleNotificationService": {
+            "target": "Package",
+            "version": "[4.0.0.9, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.406/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+# SearchForSNSFromSQSArns (.NET)
+
+This project helps you identify which AWS SNS topics are subscribed to your SQS queues. It provides two main commands: one to extract SQS queue ARNs by a filter word, and another to collect SNS subscriptions for those queues.
+
+## Prerequisites
+
+- [.NET 6.0+ SDK](https://dotnet.microsoft.com/download)
+- [AWSSDK.SimpleNotificationService](https://www.nuget.org/packages/AWSSDK.SimpleNotificationService)
+- [AWSSDK.SQS](https://www.nuget.org/packages/AWSSDK.SQS)
+- AWS credentials with permissions to call `sqs:ListQueues`, `sqs:GetQueueAttributes`, and `sns:ListSubscriptions`
+
+## Setup
+
+1. **Clone the repository**  
+   ```sh
+   git clone <repo-url>
+   cd SearchForSNSFromSQSArns
+   ```
+
+2. **Install dependencies**  
+   ```sh
+   dotnet add package AWSSDK.SimpleNotificationService
+   dotnet add package AWSSDK.SQS
+   ```
+
+3. **Configure AWS credentials**  
+   - Set environment variables:
+     ```sh
+     export AWS_ACCESS_KEY_ID=your_access_key
+     export AWS_SECRET_ACCESS_KEY=your_secret_key
+     export AWS_DEFAULT_REGION=your_region
+     ```
+   - Or use `aws configure` to set up credentials in `~/.aws/credentials`.
+
+## Usage
+
+### 1. Extract SQS ARNs by Filter
+
+This command finds all SQS queues in the given region whose **queue name** contains the filter word (case-insensitive), and writes their ARNs to `filtered_arns.txt`:
+
+```sh
+dotnet run extract <filter_word> <region>
+```
+Example:
+```sh
+dotnet run extract rewards eu-central-1
+```
+
+### 2. Collect SNS Subscriptions
+
+This command reads `filtered_arns.txt` and finds all SNS subscriptions (in the given region) where the endpoint matches one of the ARNs. The results are written to `subscriptions.txt`:
+
+```sh
+dotnet run collect <region>
+```
+Example:
+```sh
+dotnet run collect eu-central-1
+```
+
+## Output
+
+- `filtered_arns.txt`: SQS queue ARNs matching your filter word
+- `subscriptions.txt`: SNS subscription ARNs for your SQS queues

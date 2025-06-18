@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "W5sYDp3TmGY=",
+  "success": true,
+  "projectFilePath": "/Users/kristiyan.borisov/Desktop/SearchForSNSFromSQSArns/ExtractSQSSNSArns/ExtractSQSSNSArns.csproj",
+  "expectedPackageFiles": [
+    "/Users/kristiyan.borisov/.nuget/packages/awssdk.core/4.0.0.11/awssdk.core.4.0.0.11.nupkg.sha512",
+    "/Users/kristiyan.borisov/.nuget/packages/awssdk.simplenotificationservice/4.0.0.9/awssdk.simplenotificationservice.4.0.0.9.nupkg.sha512",
+    "/Users/kristiyan.borisov/.nuget/packages/awssdk.sqs/4.0.0.10/awssdk.sqs.4.0.0.10.nupkg.sha512"
+  ],
+  "logs": []
+}
