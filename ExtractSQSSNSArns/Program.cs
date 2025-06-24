@@ -80,6 +80,49 @@ class Program
         await File.WriteAllLinesAsync(outputFile, subscriptions);
         Console.WriteLine($"Found {subscriptions.Count} subscriptions. Written to {outputFile}.");
     }
+    
+    static async Task PurgeSqsQueues(string regionName)
+    {
+        var inputFile = "filtered_arns.txt";
+        if (!File.Exists(inputFile))
+        {
+            Console.WriteLine($"Input file '{inputFile}' not found. Run extract first.");
+            return;
+        }
+
+        var sqsArns = new HashSet<string>(File.ReadAllLines(inputFile));
+        var region = RegionEndpoint.GetBySystemName(regionName);
+        var sqsClient = new AmazonSQSClient(region);
+
+        int purgedCount = 0;
+        foreach (var arn in sqsArns)
+        {
+            // Get the queue URL from the ARN
+            var queueName = arn.Split(':').Last();
+            var getQueueUrlResponse = await sqsClient.GetQueueUrlAsync(queueName);
+            var queueUrl = getQueueUrlResponse.QueueUrl;
+
+            try
+            {
+                await sqsClient.PurgeQueueAsync(new PurgeQueueRequest
+                {
+                    QueueUrl = queueUrl
+                });
+                Console.WriteLine($"Purged messages from queue: {queueName}");
+                purgedCount++;
+            }
+            catch (PurgeQueueInProgressException)
+            {
+                Console.WriteLine($"Purge already in progress for queue: {queueName}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to purge queue {queueName}: {ex.Message}");
+            }
+        }
+
+        Console.WriteLine($"Purged {purgedCount} queues.");
+    }
 
     private static async Task ChooseFunctionality(string[] args)
     {
@@ -88,6 +131,7 @@ class Program
             Console.WriteLine("Usage:");
             Console.WriteLine("  dotnet run extract <filter_word> <region>");
             Console.WriteLine("  dotnet run collect <region>");
+            Console.WriteLine("  dotnet run purge <region>");
             return;
         }
 
@@ -110,6 +154,15 @@ class Program
                 return;
             }
             await CollectSnsSubscriptions(args[1]);
+        }
+        else if (command == "purge")
+        {
+            if (args.Length < 2)
+            {
+                Console.WriteLine("Usage: dotnet run purge <region>");
+                return;
+            }
+            await PurgeSqsQueues(args[1]);
         }
         else
         {

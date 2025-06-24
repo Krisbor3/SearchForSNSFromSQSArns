@@ -1,13 +1,18 @@
 # SearchForSNSFromSQSArns (.NET)
 
-This project helps you identify which AWS SNS topics are subscribed to your SQS queues. It provides two main commands: one to extract SQS queue ARNs by a filter word, and another to collect SNS subscriptions for those queues.
+This project helps you identify which AWS SNS topics are subscribed to your SQS queues, extract SQS ARNs by filter, and purge messages from those queues.  
+It provides three main commands:
+
+- **extract**: Extract SQS queue ARNs by a filter word.
+- **collect**: Collect SNS subscriptions for those queues.
+- **purge**: Delete all messages from the queues in `filtered_arns.txt`.
 
 ## Prerequisites
 
 - [.NET 6.0+ SDK](https://dotnet.microsoft.com/download)
 - [AWSSDK.SimpleNotificationService](https://www.nuget.org/packages/AWSSDK.SimpleNotificationService)
 - [AWSSDK.SQS](https://www.nuget.org/packages/AWSSDK.SQS)
-- AWS credentials with permissions to call `sqs:ListQueues`, `sqs:GetQueueAttributes`, and `sns:ListSubscriptions`
+- AWS credentials with permissions to call `sqs:ListQueues`, `sqs:GetQueueAttributes`, `sns:ListSubscriptions`, and `sqs:PurgeQueue`
 
 ## Setup
 
@@ -36,7 +41,7 @@ This project helps you identify which AWS SNS topics are subscribed to your SQS 
 
 ### 1. Extract SQS ARNs by Filter
 
-This command finds all SQS queues in the given region whose **queue name** contains the filter word (case-insensitive), and writes their ARNs to `filtered_arns.txt`:
+Find all SQS queues in the given region whose **queue name** contains the filter word (case-insensitive), and write their ARNs to `filtered_arns.txt`:
 
 ```sh
 dotnet run extract <filter_word> <region>
@@ -48,7 +53,7 @@ dotnet run extract rewards eu-central-1
 
 ### 2. Collect SNS Subscriptions
 
-This command reads `filtered_arns.txt` and finds all SNS subscriptions (in the given region) where the endpoint matches one of the ARNs. The results are written to `subscriptions.txt`:
+Read `filtered_arns.txt` and find all SNS subscriptions (in the given region) where the endpoint matches one of the ARNs. The results are written to `subscriptions.txt`:
 
 ```sh
 dotnet run collect <region>
@@ -57,6 +62,19 @@ Example:
 ```sh
 dotnet run collect eu-central-1
 ```
+
+### 3. Purge SQS Queues
+
+Delete all messages from the SQS queues listed in `filtered_arns.txt`:
+
+```sh
+dotnet run purge <region>
+```
+Example:
+```sh
+dotnet run purge eu-central-1
+```
+**Warning:** Purging a queue deletes all messages in it. Use with caution.
 
 ## Output
 

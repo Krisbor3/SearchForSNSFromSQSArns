@@ -17,3 +17,4 @@
 /Users/kristiyan.borisov/Desktop/SearchForSNSFromSQSArns/ExtractSQSSNSArns/obj/Debug/net8.0/ExtractSQSSNSArns.genruntimeconfig.cache
 /Users/kristiyan.borisov/Desktop/SearchForSNSFromSQSArns/ExtractSQSSNSArns/obj/Debug/net8.0/ref/ExtractSQSSNSArns.dll
 /Users/kristiyan.borisov/Desktop/SearchForSNSFromSQSArns/ExtractSQSSNSArns/bin/Debug/net8.0/AWSSDK.SQS.dll
+/Users/kristiyan.borisov/Desktop/SearchForSNSFromSQSArns/ExtractSQSSNSArns/obj/Debug/net8.0/ExtractSQSSNSArns.sourcelink.json

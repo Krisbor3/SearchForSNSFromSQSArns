@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ExtractSQSSNSArns")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8da93a2a4d979575a023cf47d3c82c9d1e5eabe0")]
 [assembly: System.Reflection.AssemblyProductAttribute("ExtractSQSSNSArns")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ExtractSQSSNSArns")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
